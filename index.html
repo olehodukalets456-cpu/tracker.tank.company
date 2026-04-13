@@ -195,6 +195,30 @@ footer a:hover{color:var(--white)}
 /* floating bg lines */
 .bg-line{position:fixed;pointer-events:none;z-index:0;opacity:0}
 @media(max-width:900px){.charts-grid{grid-template-columns:1fr 1fr}}
+/* BUNDLE */
+.bundle-box{background:var(--card);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative}
+.bundle-box::before{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,255,0.06) 0%,transparent 70%);pointer-events:none}
+.bundle-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.bundle-left{padding:48px;border-right:1px solid var(--border2)}
+.bundle-right{padding:40px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.bundle-product{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px}
+.bp-icon{font-size:20px;width:36px;text-align:center}
+.bp-name{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.04em;flex:1}
+.bp-sub{font-size:11px;color:var(--muted);width:110px}
+.bp-price{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent)}
+.bundle-plus{text-align:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--muted);line-height:1}
+.bundle-total-row{background:var(--accent-dim);border:1px solid rgba(0,212,255,.2);border-radius:12px;padding:16px 20px;margin-top:4px}
+.bt-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.bt-val{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--accent);line-height:1;margin-bottom:2px}
+.bt-save{font-size:12px;color:var(--muted2)}
+.order-bump{background:var(--bg2);border:1px solid rgba(0,212,255,.25);border-radius:12px;padding:20px 24px;margin-bottom:24px;text-align:left}
+.bump-label{display:flex;align-items:flex-start;gap:16px;cursor:pointer}
+.bump-label input[type=checkbox]{width:20px;height:20px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+.bump-text{display:flex;flex-direction:column;gap:4px}
+.bump-title{font-weight:700;font-size:14px;color:var(--white);letter-spacing:.04em}
+.bump-plus{color:var(--accent);margin-left:6px}
+.bump-desc{font-size:13px;color:var(--muted2);line-height:1.5}
+@media(max-width:900px){.bundle-inner{grid-template-columns:1fr}.bundle-left{border-right:none;border-bottom:1px solid var(--border2)}.bundle-left,.bundle-right{padding:32px 24px}}
 </style>
 </head>
 <body>
@@ -217,16 +241,16 @@ footer a:hover{color:var(--white)}
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-badge"><div class="dot"></div>Built with Professional Athletes</div>
-      <h1>Download the<br><span class="g">52-Week</span><br>Training Dashboard</h1>
-      <p class="hero-p">Log your sets. The dashboard builds your charts, tracks your PRs, and shows you exactly where you're growing — and where you've been stuck for months.</p>
+      <div class="hero-badge"><div class="dot"></div>The Mathematical Engine for Lean Mass</div>
+      <h1>Engineer Your<br><span class="g">Muscle</span><br>Adaptation</h1>
+      <p class="hero-p">Stop guessing your lifts. If you are not logging strict progressive overload, you are leaving 50% of your mass on the table. Track every micro-progression, force adaptation, and eliminate junk volume.</p>
       <div class="hero-price-wrap">
         <div class="hero-price-old"><span>$45</span></div>
         <div class="hero-price-arrow">↓</div>
       </div>
       <div class="hero-actions">
-        <a href="#" class="btn-primary" data-buy>Download Tracker — $19</a>
-        <a href="#inside" class="btn-ghost">See What's Inside</a>
+        <a href="#" class="btn-primary" data-buy>Unlock the System — $19</a>
+        <a href="#inside" class="btn-ghost">See the Architecture</a>
       </div>
       <div class="hero-pills">
         <div class="pill"><div class="dot"></div>Google Sheets + Excel</div>
@@ -276,8 +300,8 @@ footer a:hover{color:var(--white)}
   <div class="wrap">
     <div class="tc fade-up">
       <span class="sec-label">The Problem</span>
-      <h2>You Train<br><span class="g">But You Don't</span><br>Know If It's Working</h2>
-      <p class="sub c">Without data you're guessing. And guessing keeps you stuck at the same weights, the same plateau — for months.</p>
+      <h2>You Are Just<br><span class="g">Exercising</span><br>Not Training</h2>
+      <p class="sub c">Lifting whatever feels heavy today is not a strategy. Without data, your muscles have zero biological reason to grow.</p>
     </div>
     <div class="problems-grid">
       <div class="prob-card"><div class="prob-icon">✕</div><p class="prob-text">You don't remember what you lifted last week — so you can't know if you're actually progressing</p></div>
@@ -321,10 +345,10 @@ footer a:hover{color:var(--white)}
 
 <div class="mid-cta fade-up">
   <div class="mid-cta-text">
-    <h3>What Gets Measured<br><span class="g">Gets Improved.</span></h3>
+    <h3>A System<br><span class="g">Not a Spreadsheet</span></h3>
     <p>52 weeks. Auto-updating charts. Built with professional athletes. $19 one time.</p>
   </div>
-  <a href="#" class="btn-primary" data-buy>Download Tracker →</a>
+  <a href="#" class="btn-primary" data-buy>Get Instant Access →</a>
 </div>
 
 <section id="inside">
@@ -356,8 +380,8 @@ footer a:hover{color:var(--white)}
   <div class="wrap">
     <div class="charts-header fade-up">
       <span class="sec-label">Inside the Tracker</span>
-      <h2>A Graph for Every<br><span class="g">Muscle Group</span></h2>
-      <p class="sub c" style="margin:14px auto 0">Weight vs Target. Week by week. You see instantly where you're growing and where you've been stuck.</p>
+      <h2>Surgical Precision<br><span class="g">for Every Muscle</span></h2>
+      <p class="sub c" style="margin:14px auto 0">Stop doing junk volume. See exactly which body parts are growing and which ones are lagging behind. Adjust your programming instantly based on hard data.</p>
     </div>
     <div class="charts-grid" id="charts-grid">
 
@@ -460,6 +484,43 @@ footer a:hover{color:var(--white)}
     </div>
   </div>
 </section>
+<!-- BUNDLE UPSELL -->
+<section id="bundle" style="padding:100px 0;border-top:1px solid var(--border);position:relative;z-index:1">
+  <div class="wrap">
+    <div class="bundle-box fade-up">
+      <div class="bundle-inner">
+        <div class="bundle-left">
+          <span class="sec-label">The Complete System</span>
+          <h2 style="font-size:clamp(32px,4vw,52px);margin-bottom:16px">The Engine<br>Needs <span class="g">Fuel</span></h2>
+          <p style="font-size:15px;color:var(--muted2);line-height:1.75;max-width:380px;margin-bottom:28px">Tracking your lifts forces muscle adaptation. But without a precise caloric surplus, your body has no material to build that muscle. The TANK Protocol is the mathematical blueprint to engineer 1000+ clean liquid calories in 60 seconds. Zero cooking. Zero force-feeding.</p>
+          <a href="#" class="btn-primary" data-buy>Get Both — $48 &nbsp;<s style="font-size:12px;opacity:.6">$68</s></a>
+        </div>
+        <div class="bundle-right">
+          <div class="bundle-product">
+            <div class="bp-icon">⚡</div>
+            <div class="bp-name">Training Tracker</div>
+            <div class="bp-sub">52-Week Dashboard</div>
+            <div class="bp-price">$19</div>
+          </div>
+          <div class="bundle-plus">+</div>
+          <div class="bundle-product">
+            <div class="bp-icon">🧪</div>
+            <div class="bp-name">Tank Protocol</div>
+            <div class="bp-sub">Liquid Calorie System</div>
+            <div class="bp-price">$29</div>
+          </div>
+          <div class="bundle-total-row">
+            <div class="bt-label">Bundle price</div>
+            <div class="bt-val">$48</div>
+            <div class="bt-save">You save $20 vs buying separately</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
   <div class="wrap">
     <div class="tc fade-up">
       <span class="sec-label">From People Who Use It</span>
@@ -500,14 +561,24 @@ footer a:hover{color:var(--white)}
     <div class="cta-box fade-up">
       <div class="cta-inner">
         <span class="sec-label">One-Time · No Subscription</span>
-        <h2>Stop Guessing<br><span class="g">Start Seeing</span></h2>
+        <h2>Deploy the TANK<br><span class="g">Architecture Today</span></h2>
         <p>52 weeks. Every set. Every PR. Every trend. Built with professional athletes — available to anyone who trains seriously.</p>
         <div class="price-anchor">
           <span class="price-old">$45</span>
-          <span class="price-new">$19</span>
+          <span class="price-new" id="cta-price">$19</span>
           <span class="price-label">one time</span>
         </div>
-        <a href="#" class="btn-large" data-buy>Download The Tracker →</a>
+        <!-- ORDER BUMP -->
+        <div class="order-bump" id="order-bump">
+          <label class="bump-label">
+            <input type="checkbox" id="bump-check" onchange="toggleBump(this)">
+            <div class="bump-text">
+              <span class="bump-title">ADD THE TANK PROTOCOL <span class="bump-plus">+$29</span></span>
+              <span class="bump-desc">Yes — I want the liquid calorie blueprint to maximize my surplus. Normal price $49. Bundle it now and save $20.</span>
+            </div>
+          </label>
+        </div>
+        <a href="#" class="btn-large" id="cta-btn" data-buy>Secure My System — $19</a>
         <p class="cta-note">One-time payment<span>·</span>Instant delivery<span>·</span>Google Sheets + Excel<span>·</span>No subscription</p>
       </div>
     </div>
@@ -597,6 +668,18 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 })();
 
 document.querySelectorAll('.ic-icon').forEach(icon=>{const frames=icon.querySelectorAll('.icon-frame');if(frames.length<2)return;let cur=0;setInterval(()=>{frames[cur].classList.add('hidden');cur=(cur+1)%frames.length;frames[cur].classList.remove('hidden');},2000+Math.random()*1000);});
+
+function toggleBump(cb){
+  const btn=document.getElementById('cta-btn');
+  const price=document.getElementById('cta-price');
+  if(cb.checked){
+    price.textContent='$48';
+    btn.textContent='Secure My System — $48';
+  } else {
+    price.textContent='$19';
+    btn.textContent='Secure My System — $19';
+  }
+}
 
 const GUMROAD_URL='https://tankcompany.gumroad.com/l/TrainingTracker';
 document.querySelectorAll('[data-buy]').forEach(btn=>{btn.addEventListener('click',function(e){e.preventDefault();window.open(GUMROAD_URL+'?wanted=true','_blank','width=760,height=620,left='+(screen.width/2-380)+',top='+(screen.height/2-310)+',resizable=yes,scrollbars=yes');});});
